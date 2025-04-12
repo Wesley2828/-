@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>讀書喵日記</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="bg-music" autoplay loop controls hidden>
+        <source src="assets/music/bg-music.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="container">
+        <h1>讀書喵日記</h1>
+        <div class="buttons">
+            <button onclick="showSection('upload')">上傳計劃</button>
+            <button onclick="showSection('daily')">當日進度</button>
+            <button onclick="showSection('countdown')">倒數日</button>
+        </div>
+
+        <section id="upload" class="section">
+            <h2>每日計劃上傳</h2>
+            <textarea id="plan-input" placeholder="輸入今日計畫，每行一項..."></textarea>
+            <button onclick="savePlan()">儲存計劃</button>
+        </section>
+
+        <section id="daily" class="section">
+            <h2>當日進度</h2>
+            <div id="notes-container"></div>
+            <textarea id="note-input" placeholder="輸入今日進度..."></textarea>
+            <button onclick="addNote()">新增便條</button>
+        </section>
+
+        <section id="countdown" class="section">
+            <h2>倒數日</h2>
+            <input type="date" id="target-date">
+            <button onclick="setCountdown()">設定目標日</button>
+            <p id="countdown-display"></p>
+        </section>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
